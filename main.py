@@ -1,10 +1,12 @@
 
 def count_batteries_by_health(present_capacities):
-  # Initialize counts
+  # Initialize counts for healthy, exchange, and failed batteries
+    counts = {
         "healthy": 0,
         "exchange": 0,
         "failed": 0
     }
+
 
     # Rated capacity
     rated_capacity = 120
