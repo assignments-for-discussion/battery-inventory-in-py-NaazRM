@@ -36,28 +36,27 @@ def test_bucketing_by_health():
   assert(counts["exchange"] == 3)
   assert(counts["failed"] == 1)
 
-  # Test Case 2:when there are no batteries
+  # Test Case 2:when Empty list
   present_capacities_empty = []
   counts_empty = count_batteries_by_health(present_capacities_empty)
   assert(counts_empty["healthy"] == 0)
   assert(counts_empty["exchange"] == 0)
   assert(counts_empty["failed"] == 0)
   
-  # Test Case 3: single battery is zero
+  # Test Case 3: when minimum SoH
   present_capacities = [0]
   counts = count_batteries_by_health(present_capacities)
   assert(counts["healthy"] == 0)
   assert(counts["exchange"] == 0)
   assert(counts["failed"] == 1)
 
-  # Test Case 4: single battery is 120
+  # Test Case 4: Boundary condition -when maximum SoH
   present_capacities = [120]
   counts = count_batteries_by_health(present_capacities)
   assert(counts["healthy"] == 1)
   assert(counts["exchange"] == 0)
   assert(counts["failed"] == 0)
   print("Done counting :)")
-
 
 if __name__ == '__main__':
   test_bucketing_by_health()
