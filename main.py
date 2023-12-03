@@ -6,8 +6,6 @@ def count_batteries_by_health(present_capacities):
         "exchange": 0,
         "failed": 0
     }
-
-
     # Rated capacity
     rated_capacity = 120
 
