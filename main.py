@@ -1,6 +1,6 @@
 
 def count_batteries_by_health(present_capacities):
-  
+    # Initialize counts
     counts = {
         "healthy": 0,
         "exchange": 0,
